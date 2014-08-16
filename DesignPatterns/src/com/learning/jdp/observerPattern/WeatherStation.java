@@ -1,4 +1,4 @@
-package com.learning.jdp.oberverPattern;
+package com.learning.jdp.observerPattern;
 
 public class WeatherStation {
 
