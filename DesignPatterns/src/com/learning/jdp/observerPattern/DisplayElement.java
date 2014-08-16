@@ -1,5 +1,5 @@
 package com.learning.jdp.observerPattern;
 
 public interface DisplayElement {
-	void display();
+	void display(Data d);
 }

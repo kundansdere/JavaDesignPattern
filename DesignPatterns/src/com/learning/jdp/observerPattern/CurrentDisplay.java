@@ -1,8 +1,8 @@
 package com.learning.jdp.observerPattern;
 
-public class CurrentDisplay implements Observer, DisplayElement {
+public class CurrentDisplay extends DisplayBehavior implements Observer{
 
-	Data wd = new Data();
+	Data d = new Data();
 	WeatherData sub;
 	
 	public CurrentDisplay (WeatherData sub){
@@ -11,17 +11,10 @@ public class CurrentDisplay implements Observer, DisplayElement {
 	}
 	
 	@Override
-	public void display() {
-		// TODO Auto-generated method stub
-		System.out.println("Current Display got "
-				+ wd.getHumidity() + " " + wd.getPresure() + " " + wd.getTemparature());
-	}
-
-	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		this.wd = sub.getData();
-		display();
+		this.d = sub.getData();
+		display(d);
 	}
 
 }

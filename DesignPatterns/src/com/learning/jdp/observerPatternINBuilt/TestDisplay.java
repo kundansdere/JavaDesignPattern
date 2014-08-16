@@ -4,9 +4,10 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.learning.jdp.observerPattern.Data;
+import com.learning.jdp.observerPattern.DisplayBehavior;
 import com.learning.jdp.observerPattern.DisplayElement;
 
-public class TestDisplay implements DisplayElement, Observer {
+public class TestDisplay extends DisplayBehavior implements Observer {
 
 	Data d = new Data();
 	Observable sub;
@@ -19,13 +20,7 @@ public class TestDisplay implements DisplayElement, Observer {
 		// TODO Auto-generated method stub
 		WeatherData wd = (WeatherData) sub;
 		d = wd.getData();
-		display();
-	}
-
-	@Override
-	public void display() {
-		// TODO Auto-generated method stub
-		System.out.println("Test got this" + d.getHumidity() +" " + d.getPresure() + "" + d.getTemparature());
+		display(d);
 	}
 
 }

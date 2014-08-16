@@ -2,7 +2,7 @@ package com.learning.jdp.observerPatternINBuilt;
 
 import com.learning.jdp.observerPattern.Data;
 
-public class WeatherDataINBuilt {
+public class WeatherStationINBuilt {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -1,26 +1,20 @@
 package com.learning.jdp.observerPattern;
 
-public class StatDisplay implements Observer, DisplayElement {
+public class StatDisplay extends DisplayBehavior implements Observer {
 
-	Data wd = new Data();
+	Data d = new Data();
 	WeatherData sub ;
 	
 	public StatDisplay (WeatherData sub){
 		this.sub = sub;
 		sub.addObserver(this);
 	}
-	@Override
-	public void display() {
-		// TODO Auto-generated method stub
-		System.out.println("Stats Display got "
-				+ wd.getTemparature() + " " + wd.getPresure() + " " + wd.getHumidity());
-	}
 
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		this.wd = sub.getData();
-		display();
+		this.d = sub.getData();
+		display(d);
 	}
 
 }
